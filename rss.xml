@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>George's Garden</title>
+    <link>https://je0dev.github.io/ece-blog</link>
+    <description>A digital garden of projects, learning notes, and ideas.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Apr 2026 10:51:19 GMT</lastBuildDate>
+    <atom:link href="https://je0dev.github.io/ece-blog/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title><![CDATA[Project: Personal Portfolio Website]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/personal-website</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/personal-website</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A personal portfolio website built with React, TypeScript, and Tailwind CSS. Features a brutalist design with theme switching and seasonal variations.]]></description>
+      <category><![CDATA[Web Development]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[React]]></category><category><![CDATA[TypeScript]]></category><category><![CDATA[Tailwind CSS]]></category><category><![CDATA[Vite]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Project: CLI Task Manager]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/cli-task-manager</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/cli-task-manager</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A command-line task management system written in C with file-based persistence.]]></description>
+      <category><![CDATA[Software]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[C]]></category><category><![CDATA[CLI]]></category><category><![CDATA[Data Structures]]></category><category><![CDATA[File I/O]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Project: CLI ATM System]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/cli-atm-system</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/cli-atm-system</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A command-line ATM simulation demonstrating banking operations in C.]]></description>
+      <category><![CDATA[Software]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[C]]></category><category><![CDATA[CLI]]></category><category><![CDATA[Banking]]></category><category><![CDATA[Security]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Project: ESP32 Offboard Timer Sensor]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/esp32-timer-sensor</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/esp32-timer-sensor</guid>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[An ESP32-based precision timer sensor system for embedded applications.]]></description>
+      <category><![CDATA[Embedded Systems]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[ESP32]]></category><category><![CDATA[C++]]></category><category><![CDATA[Embedded Systems]]></category><category><![CDATA[IoT]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Project: Echoes of the Fallen Kingdom]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/echoes-game</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/echoes-game</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A text-based adventure game written in Python with turn-based combat.]]></description>
+      <category><![CDATA[Software]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[Python]]></category><category><![CDATA[Game Dev]]></category><category><![CDATA[CLI]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Project: Neon Vault Web Game]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/neon-vault</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/neon-vault</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A cyberpunk-themed endless runner web game with neon effects.]]></description>
+      <category><![CDATA[Web Development]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[JavaScript]]></category><category><![CDATA[Canvas]]></category><category><![CDATA[Game Dev]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Project: IMDB Clone App]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/imdb-clone</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/imdb-clone</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[An Android application in Java for movie browsing with watchlist management.]]></description>
+      <category><![CDATA[Mobile Development]]></category>
+      <category><![CDATA[project]]></category>
+      <category><![CDATA[Java]]></category><category><![CDATA[Android]]></category><category><![CDATA[SQLite]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: Language Learning Website]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/language-learning-website</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/language-learning-website</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A website for language learning with flashcards and progress tracking.]]></description>
+      <category><![CDATA[Web Development]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[React]]></category><category><![CDATA[TypeScript]]></category><category><![CDATA[Tailwind]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: My ECE Learning Journey]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/ece-learning-journey</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/ece-learning-journey</guid>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Reflections on my journey through Electrical and Computer Engineering.]]></description>
+      <category><![CDATA[Reflections]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[Education]]></category><category><![CDATA[ECE]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: Learning Rust]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/learning-rust</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/learning-rust</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[My journey learning Rust for systems programming.]]></description>
+      <category><![CDATA[Learning]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[Rust]]></category><category><![CDATA[Systems Programming]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: Learning Go]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/learning-go</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/learning-go</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Exploring Go for backend development and concurrency.]]></description>
+      <category><![CDATA[Learning]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[Go]]></category><category><![CDATA[Backend]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: Learning Zig]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/learning-zig</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/learning-zig</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Discovering Zig for low-level programming.]]></description>
+      <category><![CDATA[Learning]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[Zig]]></category><category><![CDATA[Systems Programming]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: Learning C#]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/learning-csharp</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/learning-csharp</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Exploring C# for game development and .NET.]]></description>
+      <category><![CDATA[Learning]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[C#]]></category><category><![CDATA[Unity]]></category><category><![CDATA[.NET]]></category>
+    </item>
+  
+    <item>
+      <title><![CDATA[Note: Learning C++]]></title>
+      <link>https://je0dev.github.io/ece-blog/journal/learning-cpp</link>
+      <guid>https://je0dev.github.io/ece-blog/journal/learning-cpp</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Deep dive into C++ for systems programming.]]></description>
+      <category><![CDATA[Learning]]></category>
+      <category><![CDATA[note]]></category>
+      <category><![CDATA[C++]]></category><category><![CDATA[Systems Programming]]></category>
+    </item>
+  
+  </channel>
+</rss>
