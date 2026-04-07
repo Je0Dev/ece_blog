@@ -1,20 +1,125 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <h1>George's Digital Garden</h1>
+  <p>A personal blog and portfolio for an ECE student at University of Peloponnese</p>
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 🌐 Demo
 
-View your app in AI Studio: https://ai.studio/apps/111c0ffb-48df-4588-bcee-9b7b42cda21c
+**Live Site:** https://je0dev.github.io/ece_blog
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## 📖 About
 
+This is my digital garden — a space where I document my journey as an Electrical & Computer Engineering student. I share my projects, learning notes, and explorations in software development, embedded systems, and systems programming.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Features
+
+- 📝 **Blog Posts** - Detailed write-ups of projects and learning notes
+- 🏷️ **Tag Filtering** - Filter posts by technology (Rust, Go, C++, etc.)
+- 🔍 **Search** - Quick search across all posts
+- 🌙 **Dark/Light Theme** - Toggle between themes
+- 📱 **Responsive Design** - Works on all devices
+- 📑 **Table of Contents** - Auto-generated for long posts
+- 📊 **Reading Progress** - Progress bar while reading
+- 🗺️ **Sitemap** - SEO optimized
+- 📰 **RSS Feed** - Subscribe to updates
+
+### Tech Stack
+
+- **React 19** + TypeScript
+- **Tailwind CSS 4**
+- **Vite**
+- **Framer Motion** for animations
+- **Lucide React** for icons
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Je0Dev/ece_blog.git
+cd ece_blog
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+# Start development server
+npm run dev
+```
+
+### Build
+
+```bash
+# Build for production
+npm run build
+```
+
+---
+
+## 📂 Project Structure
+
+```
+ece_blog/
+├── public/
+│   ├── favicon.svg
+│   ├── rss.xml
+│   └── sitemap.xml
+├── src/
+│   ├── components/
+│   │   ├── CardComponents.tsx
+│   │   ├── FeatureComponents.tsx
+│   │   ├── GlobalHeader.tsx
+│   │   ├── Layout.tsx
+│   │   └── UIComponents.tsx
+│   ├── pages/
+│   │   ├── AboutView.tsx
+│   │   ├── GardenView.tsx
+│   │   ├── JournalDetail.tsx
+│   │   └── NotFound.tsx
+│   ├── data/
+│   │   └── entries.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── index.html
+├── package.json
+└── vite.config.ts
+```
+
+---
+
+## 🎨 Design
+
+The site features a brutalist-inspired design with:
+- Olive, brown, and tomato accent colors
+- Calligraphy fonts for titles (Playfair Display)
+- Rectangular elements with underline hover effects
+- Vintage illustrations from [Old Book Illustrations](https://www.oldbookillustrations.com)
+
+---
+
+## 📧 Connect
+
+- **GitHub:** https://github.com/Je0Dev
+- **LinkedIn:** https://linkedin.com/in/geomas
+- **Email:** giorgos_M000@hotmail.com
+
+---
+
+## 📜 License
+
+MIT License - feel free to use this as a template for your own blog!
