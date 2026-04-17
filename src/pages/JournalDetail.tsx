@@ -7,113 +7,13 @@ import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Clock, ArrowLeft, ArrowRight, Link as LinkIcon, Copy, Check, Menu, X, Rss, ExternalLink, BookOpen, Code, Cpu, Home, List } from 'lucide-react';
+import { Clock, ArrowLeft, ArrowRight, Link as LinkIcon, Copy, Check, Menu, X, Home, List } from 'lucide-react';
 
 import { JOURNAL_ENTRIES } from '../data/entries';
 import { StatusIcon, Tag, ThemeToggle } from '../components/UIComponents';
 import { JournalCard } from '../components/CardComponents';
-
-const PixelIcon = ({ type, size = 16 }: { type: string, size?: number }) => {
-  const icons: Record<string, React.ReactNode> = {
-    github: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" fill="currentColor"/>
-      </svg>
-    ),
-    linkedin: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 6V11H6V6H4ZM5 4.5C5.5 4.5 6 4 6 3.5C6 3 5.5 2.5 5 2.5C4.5 2.5 4 3 4 3.5C4 4 4.5 4.5 5 4.5ZM6 12V7.5C6 7 6.5 6.5 7 6.5C7.5 6.5 8 7 8 7.5V12H10V7C10 6 9.5 5.5 8.5 5.5C8 5.5 7.5 5.7 7 6V6H7C7.5 6 6 6 6 7V12H6Z" fill="currentColor"/>
-      </svg>
-    ),
-    twitter: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3.5C12 3.2 11.9 2.9 11.8 2.7L11.6 2.4L11.3 2.5C10.9 2.6 10.5 2.7 10.1 2.8L9.8 2.7L9.5 2.8C9.1 2.9 8.7 3 8.3 3.1L8.1 3.2L7.9 3.1C7.5 3 7.1 2.9 6.7 2.8L6.4 2.7L6.2 2.8C5.8 2.9 5.5 3 5.1 3.2L4.9 3.3L4.7 3.2C4.3 3.1 3.9 3 3.6 2.9L3.3 2.8L3.2 2.9C2.8 3 2.5 3.1 2.2 3.2L2 3.3L2.3 3.5C2.6 3.7 2.9 3.9 3.3 4.1L3.5 4.2L3.3 4.3C3 4.5 2.8 4.7 2.5 4.9L2.3 5L2.5 5.2C2.8 5.5 3.1 5.8 3.5 6.1L3.7 6.2L3.5 6.3C3.2 6.5 3 6.7 2.8 7L2.6 7.1L2.8 7.3C3.1 7.6 3.4 7.9 3.8 8.2L4 8.3L3.8 8.4C3.5 8.6 3.3 8.8 3.1 9.1L2.9 9.2L3.1 9.4C3.4 9.7 3.7 10 4.1 10.3L4.3 10.4L4.1 10.5C3.8 10.7 3.6 10.9 3.4 11.2L3.2 11.3L3.4 11.5C3.7 11.8 4 12.1 4.4 12.4L4.6 12.5L4.4 12.6C4.1 12.8 3.9 13 3.7 13.3L3.5 13.4L3.8 13.6L11 6.5L11 3.5L12 3.5Z" fill="currentColor"/>
-      </svg>
-    ),
-  };
-  return <span className="pixel-icon">{icons[type]}</span>;
-};
-
-const SOCIAL_LINKS = [
-  { name: 'GitHub', url: 'https://github.com/Je0Dev', icon: 'github' },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/geomas', icon: 'linkedin' },
-  { name: 'Twitter', url: 'https://twitter.com', icon: 'twitter' },
-];
-
-const SITE_LINKS = [
-  { name: 'About', url: '/', icon: BookOpen },
-  { name: 'Garden', url: '/garden', icon: Code },
-  { name: 'RSS Feed', url: '/rss.xml', icon: Rss },
-  { name: 'Personal Website', url: 'https://je0dev.github.io/personal_website/', icon: ExternalLink, external: true },
-];
-
-const LinkPreview = ({ href, children }: { href: string, children: React.ReactNode }) => {
-  const isExternal = href.startsWith('http');
-  return (
-    <span className="relative inline-block">
-      <a 
-        href={href} 
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noopener noreferrer" : undefined}
-        className="text-[var(--accent-tomato)] font-bold underline decoration-[var(--accent-brown)]/30 underline-offset-4 hover:decoration-[var(--accent-tomato)] transition-all"
-      >
-        {children}
-        {isExternal && <sup className="ml-0.5 text-[10px]">↗</sup>}
-      </a>
-    </span>
-  );
-};
-
-const CodeBlock = ({ children, language, ...props }: any) => {
-  const [copied, setCopied] = React.useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(String(children));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const codeTheme: Record<string, { border: string, gradient: string }> = {
-    javascript: { border: 'border-[var(--accent-amber)]', gradient: 'from-yellow-400 to-orange-500' },
-    typescript: { border: 'border-[var(--accent-olive)]', gradient: 'from-[var(--accent-olive)] to-[var(--accent-moss)]' },
-    python: { border: 'border-[var(--accent-moss)]', gradient: 'from-[var(--accent-moss)] to-[var(--accent-olive)]' },
-    c: { border: 'border-[var(--accent-rust)]', gradient: 'from-[var(--accent-rust)] to-[var(--accent-tomato)]' },
-    cpp: { border: 'border-[var(--accent-brown)]', gradient: 'from-[var(--accent-brown)] to-[var(--accent-clay)]' },
-    rust: { border: 'border-[var(--accent-tomato)]', gradient: 'from-[var(--accent-tomato)] to-[var(--accent-rust)]' },
-    go: { border: 'border-[var(--accent-olive)]', gradient: 'from-[var(--accent-olive)] to-[var(--accent-moss)]' },
-    java: { border: 'border-[var(--accent-rust)]', gradient: 'from-[var(--accent-rust)] to-[var(--accent-brown)]' },
-    bash: { border: 'border-[var(--accent-moss)]', gradient: 'from-[var(--accent-moss)] to-[var(--accent-olive)]' },
-    zig: { border: 'border-[var(--accent-amber)]', gradient: 'from-[var(--accent-amber)] to-[var(--accent-brown)]' },
-    csharp: { border: 'border-[var(--accent-clay)]', gradient: 'from-[var(--accent-clay)] to-[var(--accent-sepia)]' },
-  };
-
-  const theme = codeTheme[language?.toLowerCase()] || { border: 'border-[var(--accent-olive)]', gradient: 'from-[var(--accent-olive)] to-[var(--accent-moss)]' };
-
-  return (
-    <div className={`relative group/code my-8 rounded-xl border-2 ${theme.border} overflow-hidden`}>
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[var(--color-surface)] to-[var(--color-bg)] border-b border-[var(--color-border)] px-4 py-2 flex items-center justify-between z-10">
-        <div className={`px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-white bg-gradient-to-r ${theme.gradient} shadow-lg`}>
-          {language}
-        </div>
-        <button 
-          onClick={handleCopy}
-          className="p-1.5 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
-        >
-          {copied ? <Check size={14} /> : <Copy size={14} />}
-        </button>
-      </div>
-      <SyntaxHighlighter
-        style={atomDark}
-        language={language}
-        PreTag="div"
-        className="rounded-none !bg-[#0d1117] !p-5 pt-12 text-sm"
-        {...props}
-      >
-        {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
-    </div>
-  );
-};
+import { JournalSidebar, formatDate, extractHeadings, getRelatedEntries, PixelIcon, LinkPreview, SOCIAL_LINKS, SITE_LINKS } from './helpers/JournalDetailHelpers';
+import CodeBlock from './helpers/CodeBlock';
 
 export const JournalDetail = ({ isDark, onThemeToggle }: any) => {
   const { id } = useParams();

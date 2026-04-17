@@ -5,57 +5,7 @@ import { Clock, Rss, Menu, X, Hash, BookOpen, Code, Cpu, Lightbulb, Heart, Githu
 
 import { JOURNAL_ENTRIES } from '../data/entries';
 import { BackToTop, ThemeToggle } from '../components/UIComponents';
-
-const PixelIcon = ({ type, size = 20 }: { type: string, size?: number }) => {
-  const icons: Record<string, React.ReactNode> = {
-    github: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="16" height="16" fill="currentColor" fillOpacity="0"/>
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" fill="currentColor"/>
-      </svg>
-    ),
-    linkedin: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="14" height="14" rx="1" fill="currentColor" fillOpacity="0.1"/>
-        <path d="M4 6V11H6V6H4ZM5 4.5C5.5 4.5 6 4 6 3.5C6 3 5.5 2.5 5 2.5C4.5 2.5 4 3 4 3.5C4 4 4.5 4.5 5 4.5ZM6 12V7.5C6 7 6.5 6.5 7 6.5C7.5 6.5 8 7 8 7.5V12H10V7C10 6 9.5 5.5 8.5 5.5C8 5.5 7.5 5.7 7 6V6H7C7.5 6 6 6 6 7V12H6Z" fill="currentColor"/>
-        <rect x="1" y="1" width="14" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      </svg>
-    ),
-    twitter: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="14" height="14" rx="1" fill="currentColor" fillOpacity="0.1"/>
-        <path d="M12 3.5C12 3.2 11.9 2.9 11.8 2.7L11.6 2.4L11.3 2.5C10.9 2.6 10.5 2.7 10.1 2.8L9.8 2.7L9.5 2.8C9.1 2.9 8.7 3 8.3 3.1L8.1 3.2L7.9 3.1C7.5 3 7.1 2.9 6.7 2.8L6.4 2.7L6.2 2.8C5.8 2.9 5.5 3 5.1 3.2L4.9 3.3L4.7 3.2C4.3 3.1 3.9 3 3.6 2.9L3.3 2.8L3.2 2.9C2.8 3 2.5 3.1 2.2 3.2L2 3.3L2.3 3.5C2.6 3.7 2.9 3.9 3.3 4.1L3.5 4.2L3.3 4.3C3 4.5 2.8 4.7 2.5 4.9L2.3 5L2.5 5.2C2.8 5.5 3.1 5.8 3.5 6.1L3.7 6.2L3.5 6.3C3.2 6.5 3 6.7 2.8 7L2.6 7.1L2.8 7.3C3.1 7.6 3.4 7.9 3.8 8.2L4 8.3L3.8 8.4C3.5 8.6 3.3 8.8 3.1 9.1L2.9 9.2L3.1 9.4C3.4 9.7 3.7 10 4.1 10.3L4.3 10.4L4.1 10.5C3.8 10.7 3.6 10.9 3.4 11.2L3.2 11.3L3.4 11.5C3.7 11.8 4 12.1 4.4 12.4L4.6 12.5L4.4 12.6C4.1 12.8 3.9 13 3.7 13.3L3.5 13.4L3.8 13.6L11 6.5L11 3.5L12 3.5Z" fill="currentColor"/>
-        <rect x="1" y="1" width="14" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      </svg>
-    ),
-    mastodon: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="14" height="14" rx="1" fill="currentColor" fillOpacity="0.1"/>
-        <path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6V8.5H3C2.5 8.5 2 8.6 1.5 8.8V11.5C1.5 12.3 2.1 13 2.8 13H5V10.5H6V13H8.2V10.5H9L9.5 8.5H6V6C6 4.5 7 1.5 8 1.5ZM7 4.5C7.5 4.5 8 4 8 3.5C8 3 7.5 2.5 7 2.5C6.5 2.5 6 3 6 3.5C6 4 6.5 4.5 7 4.5ZM10 7H7.5V5.5H10V7Z" fill="currentColor"/>
-        <rect x="1" y="1" width="14" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      </svg>
-    ),
-    youtube: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="14" height="14" rx="1" fill="currentColor" fillOpacity="0.1"/>
-        <path d="M10 5L7 8L10 11V5Z" fill="currentColor"/>
-        <path d="M8 2.5C9.1 2.5 10 3.4 10 4.5V11.5C10 12.6 9.1 13.5 8 13.5C6.9 13.5 6 12.6 6 11.5V4.5C6 3.4 6.9 2.5 8 2.5Z" fill="currentColor"/>
-        <rect x="1" y="1" width="14" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      </svg>
-    ),
-    rss: (
-      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="14" height="14" rx="1" fill="currentColor" fillOpacity="0.1"/>
-        <rect x="3" y="3" width="2" height="2" fill="currentColor"/>
-        <rect x="3" y="7" width="2" height="2" fill="currentColor"/>
-        <rect x="3" y="11" width="2" height="2" fill="currentColor"/>
-        <path d="M7 5H13V7H7V5ZM7 9H13V11H7V9ZM7 13H13V14.5C13 14.78 12.78 15 12.5 15H7.5C7.22 15 7 14.78 7 14.5V13Z" fill="currentColor"/>
-        <rect x="1" y="1" width="14" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      </svg>
-    ),
-  };
-  return <span className="pixel-icon">{icons[type]}</span>;
-};
+import { PixelIcon } from './helpers/JournalHelpers';
 
 type TabType = 'all' | 'project' | 'note' | 'essay';
 
